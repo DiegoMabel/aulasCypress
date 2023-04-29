@@ -1,5 +1,5 @@
-const elementos = require ('../../../support/elements/cadastroElements').ELEMENTS
-import usuariosValidos from '../../../fixtures/usuariosValidos.json'
+const elementos = require ('../../../../support/elements/cadastroElements').ELEMENTS
+import usuariosValidos from '../../../../fixtures/usuariosValidos.json'
 
 describe('teste de login',()=>{
     it('teste de login valido',()=>{

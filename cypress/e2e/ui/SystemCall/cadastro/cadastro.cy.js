@@ -1,5 +1,5 @@
 const faker = require('faker-br');
-const elementos = require ('../../../support/elements/cadastroElements').ELEMENTS
+const elementos = require ('../../../../support/elements/cadastroElements').ELEMENTS
 
 var nome = faker.name.firstName();
 var telefone = faker.phone.phoneNumber();

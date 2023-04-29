@@ -1,4 +1,17 @@
+
 const bb = require ('../../../support/elements/elementosBugBank/elements').ELEMENTS
+function transferencia (){
+    cy.get(bb.fechar).click()
+    cy.get(bb.emailLogin).type('email@12.com')
+    cy.get(bb.senhaLogin).type('123')
+    cy.get(bb.acessar).click()
+    cy.get(bb.transferencia).click()
+    cy.get(bb.NConta).type('207')
+    cy.get(bb.NDigito).type('5')
+    cy.get(bb.valorTransferir).type('150')
+    cy.get(bb.clickTransferir).click()
+
+}
 function cadastro( email, nome , senha , confirmarSenha ){
     cy.get(bb.registrar).click()
     cy.get(bb.email).type(email, {force:true})
@@ -15,7 +28,7 @@ describe('Teste na tela cadastro', () => {
         cy.visit('https://bugbank.netlify.app/')
     });
 
-    it('teste de email com formto invalido', () => {
+    it('teste de email com formato invalido', () => {
         cadastro('email12.com', 'diego', '123', '123');
         cy.contains ('Formato inválido') .should('have.text','Formato inválido')
     });
@@ -46,5 +59,13 @@ describe('Teste na tela cadastro', () => {
         cadastro('email@12.com', 'diego', '123', '124');
         cy.contains ('As senhas não são iguais.') .should('have.text','As senhas não são iguais.\n')
     });
+
+    it.only('teste de cadastro com sucesso', () => {
+        cadastro('email@12.com', 'diego', '123', '123');
+        transferencia();
+
+
+    });
+
     
 });

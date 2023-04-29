@@ -1,5 +1,5 @@
-const elementos = require ('../../../support/elements/cadastroElements').ELEMENTS
-import usuariosValidos from '../../../fixtures/usuariosValidos.json'
+const elementos = require ('../../../../support/elements/cadastroElements').ELEMENTS
+import usuariosValidos from '../../../../fixtures/usuariosValidos.json'
 const faker=require ('faker-br')
 var usuario =faker.internet.userName();
 var cpf =faker.br.cpf();
